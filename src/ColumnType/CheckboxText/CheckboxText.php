@@ -9,7 +9,7 @@ class CheckboxText extends ColumnType{
     public function build(array &$option, array $data, $listBuilder) : string{
         $component_option = $option['value'];
         $value = $data[$option['name']];
-        $value = json_decode($value, true);
+        $value = json_decode(htmlspecialchars_decode($value), true);
         $show_data = [];
 
         foreach($component_option as $v){
